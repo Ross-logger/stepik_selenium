@@ -24,6 +24,8 @@ def browser(request):
         options.binary_location = "/Applications/Google Chrome 2.app/Contents/MacOS/Google Chrome"
         chrome_driver_binary = "/usr/local/bin/chromedriver"
         options.add_experimental_option('prefs', {'intl.accept_languages': user_language})
+        options.add_argument('headless')
+        options.add_argument('window-size=1920x1080')
         browser = webdriver.Chrome(chrome_driver_binary, options=options)
     elif browser_name == "firefox":
         print("\nstart firefox browser for test..")
